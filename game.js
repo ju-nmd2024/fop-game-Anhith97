@@ -28,7 +28,7 @@ function draw() {
 }
 
 function startScreen() {
-  background(255, 255, 254);
+  background(255, 255, 255);
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(0);
@@ -36,9 +36,9 @@ function startScreen() {
   textSize(16);
   text("Click Start to Begin", width / 2, height / 2);
   fill(0, 0, 255);
-  rect(280, 350, 100, 40, 20);
+  rect(270, 350, 100, 40, 20);
   fill(255);
-  text("Start", 330, 370);
+  text("Start", 320, 370);
 }
 
 function playGame() {
@@ -88,16 +88,19 @@ function playGame() {
 }
 
 function resultScreen() {
-  background(255, 0, 255);
+  background(128, 128, 128);
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(0);
   if (landingSuccess) {
+    fill(0, 205, 0);
     text("Landed Successfully!", width / 2, height / 2 - 50);
   } else {
+    fill(205, 0, 0);
     text("Landing Failed!", width / 2, height / 2 - 50);
   }
-  text("Click ´Replay´ to Try Again", width / 2, height / 2);
+  fill(0, 0, 205);
+  text("Click ´Replay´ to Try Again", width / 2 - 50, height / 2);
   fill(0, 0, 0);
   rect(250, 550, 100, 40, 20);
   fill(255);
@@ -211,10 +214,10 @@ function mousePressed() {
   // Check button click for transitions
   if (
     state === "start" &&
-    mouseX >= 280 &&
-    mouseX <= 380 &&
+    mouseX >= 270 &&
+    mouseX <= 370 &&
     mouseY >= 350 &&
-    mouseY <= 590
+    mouseY <= 390
   ) {
     state = "play";
     x = 275;
