@@ -88,24 +88,28 @@ function playGame() {
 }
 
 function resultScreen() {
-  background(128, 128, 128);
-  textSize(32);
+  background(255, 255, 61);
+  textSize(30);
   textAlign(CENTER, CENTER);
   fill(0);
   if (landingSuccess) {
     fill(0, 205, 0);
-    text("Landed Successfully!", width / 2, height / 2 - 50);
+    text("Landed Successfully!", width / 2, height / 2.5 - 50);
   } else {
     fill(205, 0, 0);
-    text("Landing Failed!", width / 2, height / 2 - 50);
+    text("Landing Failed!", width / 2, height / 2.5 - 50);
   }
-  fill(0, 0, 205);
-  text("Click ´Replay´ to Try Again", width / 2 - 50, height / 2);
   fill(0, 0, 0);
-  rect(250, 550, 100, 40, 20);
+  textSize(40);
+  text("GAME OVER", width / 2, height / 5);
+  fill(0, 0, 205);
+  textSize(30);
+  text("Click ´Replay´ to Try Again", width / 2, height / 2);
+  fill(0, 0, 0);
+  rect(270, 380, 100, 40, 10);
   fill(255);
   textSize(16);
-  text("Replay", 300, 570);
+  text("Replay", 320, 400);
 }
 
 // Clouds
@@ -175,7 +179,7 @@ function landingSpace(SpacePadX, SpacePadY) {
   fill(255);
   textSize(15);
   textAlign(CENTER, CENTER);
-  text("Space Pad", SpacePadX + 75, 520);
+  text("Landing Pad", SpacePadX + 75, 520);
 }
 
 // The Evil Character
@@ -227,10 +231,10 @@ function mousePressed() {
     SpacePadSpeed = 1;
   } else if (
     state === "end" &&
-    mouseX >= 250 &&
-    mouseX <= 350 &&
-    mouseY >= 550 &&
-    mouseY <= 590
+    mouseX >= 270 &&
+    mouseX <= 370 &&
+    mouseY >= 380 &&
+    mouseY <= 420
   ) {
     state = "start";
   }
