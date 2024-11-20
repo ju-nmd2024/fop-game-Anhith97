@@ -28,7 +28,7 @@ function draw() {
 }
 
 function startScreen() {
-  background(255, 255, 255);
+  background(255, 255, 254);
   textSize(32);
   textAlign(CENTER, CENTER);
   fill(0);
